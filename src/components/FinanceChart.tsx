@@ -6,75 +6,63 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 const data = [
   {
     name: 'Jan',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    income: 4000,
+    expence: 2400,
   },
   {
     name: 'Feb',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    income: 3000,
+    expence: 1398,
   },
   {
     name: 'Mar',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    income: 2000,
+    expence: 9800,
   },
   {
     name: 'Apr',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    income: 2780,
+    expence: 3908,
   },
   {
     name: 'May',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    income: 2780,
+    expence: 3908,
   },
   {
     name: 'Jun',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    income: 1890,
+    expence: 4800,
   },
   {
     name: 'Jul',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    income: 2390,
+    expence: 3800,
   },
   {
     name: 'Aug',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    income: 3490,
+    expence: 4300,
   },
   {
     name: 'Sep',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    income: 3490,
+    expence: 4300,
   },
   {
     name: 'Oct',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    income: 3490,
+    expence: 4300,
   },
   {
     name: 'Nov',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    income: 3490,
+    expence: 4300,
   },
   {
     name: 'Dec',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    income: 3490,
+    expence: 4300,
   },
 ];
 
@@ -85,7 +73,29 @@ const FinanceChart = () => {
             <div className='flex justify-between items-center '>
                 <h1 className='text-lg font-semibold'>Finance</h1>
                 <Image src="/moreDark.png" width={20} height={20} />
-            </div></div>
+            </div>
+            <ResponsiveContainer width="100%" height="90%">
+        <LineChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
+          <XAxis dataKey="name" axisLine={false} tick={{fill:"#d1d5db"}} tickLine={false} tickMargin={10} />
+          <YAxis axisLine={false} tick={{fill:"#d1d5db"}} tickLine={false} tickMargin={20} />
+          <Tooltip />
+          <Legend align='center' verticalAlign='top' wrapperStyle={{paddingTop:"10px",paddingBottom:"30px"}} />
+          <Line type="monotone" dataKey="income" stroke="#C3EBFA" strokeWidth={5} />
+          <Line type="monotone" dataKey="expence" stroke="#CFCEFF" strokeWidth={5} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   )
 }
 
