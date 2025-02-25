@@ -24,12 +24,11 @@ const schema = z.object({
 
 const TeacherForm = ({
   type,
-  data,
+  data
 }: {
-  type: "create" | "update";
+  type: 'create' | 'update';
   data?: any;
 }) => {
-  const App = () => {
     const {
       register,
       handleSubmit,
@@ -54,7 +53,6 @@ const TeacherForm = ({
         </span>
       </form>
     );
-  };
 };
 
 export default TeacherForm;
